@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Gerações" 
+             x:Class="Pokedex.Views.GeracoesPage">
+
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="Center">
+            
+            <ListView x:Name="lvwGeracoes" 
+                  ItemSelected="lvwPokemons_ItemSelected"
+                  HasUnevenRows="True"
+                  BackgroundColor="Transparent"
+                  SeparatorVisibility="None">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame>
+                                    <StackLayout Padding="0,20,0,20">
+                                        <Image Source="{Binding ImagemGeracao}" Aspect="AspectFit" HeightRequest="100" WidthRequest="100" />
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                <Image Source="pokemonTabble.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20" />
+                                                <Label Text="{Binding NomeGeracao}" TextColor="Black" FontSize="18"/>
+                                            </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

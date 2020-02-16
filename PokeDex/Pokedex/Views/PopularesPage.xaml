@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Populares" 
+             x:Class="Pokedex.Views.PopularesPage">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ListView HasUnevenRows="True" IsPullToRefreshEnabled="True" Refreshing="lvwPokemonFavoritos_Refreshing_1" x:Name="lvwPokemonFavoritos" ItemTapped="lvwPokemonFavoritos_ItemTapped" SeparatorVisibility="None" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Frame CornerRadius="18" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <StackLayout>
+                                        <Image Source="promocaoTabble.png" Aspect="AspectFit" HeightRequest="25" WidthRequest="25" />
+                                        <Label HorizontalTextAlignment="Center" Text="{Binding name}" FontSize="18" FontAttributes="Bold" />
+                                        <Image Source="{Binding sprites.front_shiny}" WidthRequest="100" HeightRequest="100" Aspect="AspectFit" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
